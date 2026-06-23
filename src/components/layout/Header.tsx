@@ -44,14 +44,24 @@ export default function Header() {
     setMultiplier(newMultiplier);
   };
 
+  const handleSkipToContent = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.getElementById("homepage");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      element.setAttribute("tabindex", "-1");
+      element.focus();
+    }
+  };
+
   return (
     <>
-      <a href="#homepage" className="skip-link">Skip to Main Content</a>
+      <a href="#homepage" onClick={handleSkipToContent} className="skip-link">Skip to Main Content</a>
 
       <div className="topbar" role="banner">
         <div className="container">
           <span className="topbar__date" id="topbar-date">{dateTime.dateStr}</span>
-          <a href="#homepage" className="topbar__skip">Skip to Main Content</a>
+          <a href="#homepage" onClick={handleSkipToContent} className="topbar__skip">Skip to Main Content</a>
           <div className="topbar__controls">
             <span className="topbar__font-label">Font Size</span>
             <button className="topbar__font-btn" title="Increase font size" aria-label="Increase font size" onClick={() => applyFontSize(Math.min(multiplier + 0.1, 1.5))}>A+</button>
