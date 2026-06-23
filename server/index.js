@@ -111,15 +111,27 @@ app.post("/api/auth/refresh", (req, res) => {
   }
 });
 
+// Helper to extract JWT token from request headers
+const getAuthToken = (req) => {
+  const authHeader = req.headers.authorization;
+  if (authHeader && authHeader.startsWith("Bearer ")) {
+    return authHeader.split(" ")[1];
+  }
+  const customHeader = req.headers["x-admin-token"];
+  if (customHeader) {
+    return customHeader;
+  }
+  return null;
+};
+
 // GET /api/auth/verify — check if access token is still valid
 app.get("/api/auth/verify", (req, res) => {
-  const authHeader = req.headers.authorization;
+  const token = getAuthToken(req);
 
-  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+  if (!token) {
     return res.status(401).json({ valid: false, error: "No token provided." });
   }
 
-  const token = authHeader.split(" ")[1];
   try {
     const decoded = jwt.verify(token, JWT_ACCESS_SECRET);
     res.json({ valid: true, role: decoded.role, exp: decoded.exp });
@@ -130,13 +142,11 @@ app.get("/api/auth/verify", (req, res) => {
 
 // ── Middleware: require valid access token ──────────────
 const requireAuth = (req, res, next) => {
-  const authHeader = req.headers.authorization;
+  const token = getAuthToken(req);
 
-  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+  if (!token) {
     return res.status(401).json({ error: "Access denied. Authentication token missing." });
   }
-
-  const token = authHeader.split(" ")[1];
 
   try {
     const decoded = jwt.verify(token, JWT_ACCESS_SECRET);

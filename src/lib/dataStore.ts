@@ -86,7 +86,8 @@ const getAuthHeaders = () => {
   const token = sessionStorage.getItem("admin_jwt_token") || "";
   return {
     "Content-Type": "application/json",
-    "Authorization": `Bearer ${token}`
+    "Authorization": `Bearer ${token}`,
+    "x-admin-token": token
   };
 };
 
