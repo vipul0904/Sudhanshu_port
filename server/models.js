@@ -196,7 +196,7 @@ export const Poem = {
       for (const p of poems) {
         const dbPoem = mapPoemToDB(p);
         await db.query(
-          `INSERT INTO poems (id, title, meta, is_hindi, is_reflection, lines, content, quote, quote_author, date, image, disclaimer)
+          `INSERT INTO poems (id, title, meta, is_hindi, is_reflection, \`lines\`, content, quote, quote_author, date, image, disclaimer)
            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
           [
             dbPoem.id,
