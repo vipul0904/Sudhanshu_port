@@ -187,6 +187,47 @@ const seedDatabase = async () => {
   }
 };
 
+// Endpoint to test database connection details (useful for debugging Hostinger environment variables)
+app.get("/api/test-db-connection", async (req, res) => {
+  try {
+    const { connectDB } = await import("./db.js");
+    await connectDB();
+    res.json({
+      success: true,
+      message: "Database connection successful!",
+      env: {
+        DB_HOST: process.env.DB_HOST,
+        DB_USER: process.env.DB_USER,
+        DB_NAME: process.env.DB_NAME,
+        DB_PORT: process.env.DB_PORT,
+        DB_PASSWORD_INFO: process.env.DB_PASSWORD ? {
+          length: process.env.DB_PASSWORD.length,
+          startsWith: process.env.DB_PASSWORD[0],
+          endsWith: process.env.DB_PASSWORD[process.env.DB_PASSWORD.length - 1]
+        } : "NOT_DEFINED"
+      }
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: "Database connection failed!",
+      error: err.message,
+      stack: err.stack,
+      env: {
+        DB_HOST: process.env.DB_HOST,
+        DB_USER: process.env.DB_USER,
+        DB_NAME: process.env.DB_NAME,
+        DB_PORT: process.env.DB_PORT,
+        DB_PASSWORD_INFO: process.env.DB_PASSWORD ? {
+          length: process.env.DB_PASSWORD.length,
+          startsWith: process.env.DB_PASSWORD[0],
+          endsWith: process.env.DB_PASSWORD[process.env.DB_PASSWORD.length - 1]
+        } : "NOT_DEFINED"
+      }
+    });
+  }
+});
+
 // Middleware: ensure DB is connected + seeded before handling any request
 app.use(async (req, res, next) => {
   try {
