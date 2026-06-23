@@ -87,7 +87,7 @@ async function initializeTables() {
       meta VARCHAR(255),
       is_hindi BOOLEAN DEFAULT FALSE,
       is_reflection BOOLEAN DEFAULT FALSE,
-      lines LONGTEXT,
+      \`lines\` LONGTEXT,
       content TEXT,
       quote TEXT,
       quote_author VARCHAR(255),
