@@ -61,9 +61,9 @@ async function initializeTables() {
       phone VARCHAR(50),
       phone_display VARCHAR(50),
       address TEXT,
-      socials JSON,
+      socials LONGTEXT,
       greeting VARCHAR(255),
-      bio_paragraphs JSON
+      bio_paragraphs LONGTEXT
     )`,
     `CREATE TABLE IF NOT EXISTS slides (
       id INT AUTO_INCREMENT PRIMARY KEY,
@@ -87,7 +87,7 @@ async function initializeTables() {
       meta VARCHAR(255),
       is_hindi BOOLEAN DEFAULT FALSE,
       is_reflection BOOLEAN DEFAULT FALSE,
-      lines JSON,
+      lines LONGTEXT,
       content TEXT,
       quote TEXT,
       quote_author VARCHAR(255),
