@@ -24,6 +24,7 @@ export default function Admin() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
   const [authError, setAuthError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   
   // Tab control
   const [activeTab, setActiveTab] = useState<"profile" | "contact" | "slides" | "blogs" | "guestPosts" | "poetry" | "messages">("profile");
@@ -464,15 +465,25 @@ export default function Admin() {
           <form onSubmit={handleLogin} className="admin-login-form">
             <div className="form-group">
               <label htmlFor="passkey">Admin Passkey</label>
-              <input
-                id="passkey"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••••••"
-                required
-                autoFocus
-              />
+              <div className="password-input-container">
+                <input
+                  id="passkey"
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="••••••••••••"
+                  required
+                  autoFocus
+                />
+                <button
+                  type="button"
+                  className="password-toggle-btn"
+                  onClick={() => setShowPassword(!showPassword)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                >
+                  {showPassword ? "👁️" : "🙈"}
+                </button>
+              </div>
               {authError && <p className="error-message">{authError}</p>}
             </div>
             <button type="submit" className="admin-btn admin-btn--primary admin-btn--block">
@@ -1611,6 +1622,40 @@ function AdminStyles() {
       
       .admin-login-form input:focus {
         border-color: var(--saffron);
+      }
+      
+      .password-input-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+      
+      .password-input-container input {
+        width: 100%;
+        padding-right: 42px !important;
+      }
+      
+      .password-toggle-btn {
+        position: absolute;
+        right: 12px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        font-size: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--charcoal-muted);
+        outline: none;
+        user-select: none;
+        transition: color var(--transition-fast);
+      }
+      
+      .password-toggle-btn:hover {
+        color: var(--saffron-deep);
       }
       
       .error-message {
