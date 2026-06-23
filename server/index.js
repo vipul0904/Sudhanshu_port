@@ -279,7 +279,22 @@ app.get("/api/portfolio", async (req, res) => {
 // 2. SAVE ALL PORTFOLIO DATA (Admin save all — parallel writes for speed)
 app.post("/api/portfolio", requireAuth, async (req, res) => {
   try {
-    const { profile, slides, blogs, poetry } = req.body;
+    let { profile, slides, blogs, poetry } = req.body;
+    
+    // Support Base64 encoded payload to bypass Hostinger ModSecurity/WAF
+    if (req.body.payload) {
+      try {
+        const decoded = Buffer.from(req.body.payload, "base64").toString("utf-8");
+        const parsed = JSON.parse(decoded);
+        profile = parsed.profile;
+        slides = parsed.slides;
+        blogs = parsed.blogs;
+        poetry = parsed.poetry;
+      } catch (decodeError) {
+        console.error("Failed to decode base64 payload:", decodeError.message);
+        return res.status(400).json({ error: "Invalid payload encoding" });
+      }
+    }
     
     // Step 1: Delete all collections in parallel
     await Promise.all([

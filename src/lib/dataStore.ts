@@ -279,9 +279,19 @@ export async function saveStore(store: PortfolioStore) {
   
   // Send save request to Express Server API
   try {
+    const rawJson = JSON.stringify(store);
+    // Safe unicode base64 encoding
+    const utf8Bytes = new TextEncoder().encode(rawJson);
+    let binary = "";
+    const len = utf8Bytes.byteLength;
+    for (let i = 0; i < len; i++) {
+      binary += String.fromCharCode(utf8Bytes[i]);
+    }
+    const encoded = btoa(binary);
+
     const response = await authFetch("/api/portfolio", {
       method: "POST",
-      body: JSON.stringify(store)
+      body: JSON.stringify({ payload: encoded })
     });
     if (!response.ok) {
       const err = await response.json();
