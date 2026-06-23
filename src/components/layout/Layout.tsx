@@ -46,7 +46,7 @@ export default function Layout() {
     <>
       <Header />
       <Navbar />
-      <main id="main-content">
+      <main id="homepage">
         <Outlet />
       </main>
       <Footer />

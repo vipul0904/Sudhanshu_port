@@ -46,12 +46,12 @@ export default function Header() {
 
   return (
     <>
-      <a href="#main-content" className="skip-link">Skip to Main Content</a>
+      <a href="#homepage" className="skip-link">Skip to Main Content</a>
 
       <div className="topbar" role="banner">
         <div className="container">
           <span className="topbar__date" id="topbar-date">{dateTime.dateStr}</span>
-          <a href="#main-content" className="topbar__skip">Skip to Main Content</a>
+          <a href="#homepage" className="topbar__skip">Skip to Main Content</a>
           <div className="topbar__controls">
             <span className="topbar__font-label">Font Size</span>
             <button className="topbar__font-btn" title="Increase font size" aria-label="Increase font size" onClick={() => applyFontSize(Math.min(multiplier + 0.1, 1.5))}>A+</button>
