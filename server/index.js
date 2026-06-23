@@ -447,8 +447,14 @@ if (fs.existsSync(distPath)) {
 // Local development: start Express server with listen()
 if (!process.env.VERCEL) {
   const startServer = async () => {
-    await connectDB();
-    await seedDatabase();
+    try {
+      await connectDB();
+      await seedDatabase();
+      console.log("Database connected and seeded successfully.");
+    } catch (err) {
+      console.error("Database connection/seeding failed during startup:", err.message);
+      console.log("Starting server in offline/database-offline fallback mode...");
+    }
     
     app.listen(PORT, () => {
       console.log(`Express Portfolio API Server is running on http://localhost:${PORT}`);
