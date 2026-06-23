@@ -1,0 +1,192 @@
+{
+  "profile": {
+    "heroImage": "https://res.cloudinary.com/dxvbx80hw/image/upload/v1775831017/WhatsApp_Image_2026-04-10_at_19.51.38_cate6z.jpg",
+    "name": "Sudhanshu Ravi Rajaram Sharma",
+    "title": "Scholar & Educator",
+    "tagline": "A dynamic & devoted individual towards the nation, loving the diversity of India.",
+    "phone": "+919807112687",
+    "phoneDisplay": "(+91)-9807112687",
+    "address": "Room No. 380B, Neelkanth Hostel,\nIndian Institute of Technology,\nNH62 Nagaur Road, Karwar,\nJodhpur, Rajasthan 342030\nINDIA",
+    "socials": {
+      "facebook": "https://www.facebook.com/skrs.sharma/",
+      "twitter": "https://x.com/Its_SRRS",
+      "instagram": "https://www.instagram.com/_its_srrs/",
+      "linkedin": "https://www.linkedin.com/in/its-srrs/",
+      "youtube": "https://www.youtube.com/@Its_SRRS"
+    },
+    "greeting": "नमस्ते | Namaste 🙏",
+    "bioParagraphs": [
+      "Hi, I am Sudhanshu Sharma, an aspiring teacher, scholar, motivator, and lifelong learner. I believe in living a simple and meaningful life inspired by the values and philosophy of Mahatma Gandhi. I aspire to contribute to society through education and strive to follow the path of Dharma Marga, a path of righteousness and purpose. As an educator, I draw inspiration from great teachers and visionaries such as Swami Vivekananda, Dr. S. Radhakrishnan, and Dr. A.P.J. Abdul Kalam, whose ideas continue to shape my thinking and aspirations.",
+      "My research interests lie at the intersection of Design Thinking, STEM Education, Teacher Education, Learning Sciences, and Educational Technology. I am particularly interested in understanding how pre-service teachers develop as designers of learning experiences and how meaningful scaffolding can support their learning processes. My work explores ways to foster creativity, problem-solving, and reflective thinking, especially in resource-constrained educational settings. I am interested in designing learning experiences that empower teachers and learners to engage with real-world challenges through thoughtful and innovative approaches. Beyond research, I enjoy exploring ideas around teaching, human learning, motivation, and personal growth.",
+      "I strongly believe that teachers carry a significant responsibility in shaping individuals and society. Education goes beyond imparting knowledge. It is about understanding diverse needs and contributing meaningfully towards the growth of individuals and communities. I believe that talent alone does not determine success. Through dedication, perseverance, and purpose-driven effort, individuals can achieve outcomes beyond what may initially seem possible. History is filled with stories of ordinary individuals who accomplished extraordinary things through determination and hard work. One inspiring example is Dashrath Manjhi, the Mountain Man, whose persistence transformed a mountain into a pathway. One principle that guides my life is \"Dedication + Mission + Vision = Transformation.\" I believe that meaningful achievements emerge from sincere effort and determination, and that continuous learning and dedication can guide even an ordinary individual towards extraordinary possibilities."
+    ]
+  },
+  "slides": [
+    { "img": "https://res.cloudinary.com/dgv0vuctj/image/upload/v1779551995/xmgsq6mfitt5dzjb8qcx.jpg", "caption": "Advancing dialog in modern education" },
+    { "img": "https://res.cloudinary.com/dgv0vuctj/image/upload/v1779551997/aaftbq276c3urdho5pgl.jpg", "caption": "Collaborative approaches in teacher training" },
+    { "img": "https://res.cloudinary.com/dgv0vuctj/image/upload/v1779551999/pvbublrxinawtinwtsfj.jpg", "caption": "Integrating Indian Knowledge Systems into curricula" }
+  ],
+  "blogs": [
+    {
+      "id": "osmotic-pressure",
+      "type": "stem",
+      "title": "Why Osmotic Pressure is used to calculate the molecular mass of macro molecules ?",
+      "meta": "Physical Chemistry • May 1, 2020",
+      "excerpt": "Osmotic Pressure is preferred to calculate the molecular mass of macromolecules because all other colligative properties require abnormal temperature conditions, whereas Osmotic Pressure can be calculated at Room Temperature.",
+      "link": "#",
+      "image": "🧪",
+      "gradient": "linear-gradient(135deg, #2D5016, #6B8E5B)",
+      "date": "2020-05-01"
+    },
+    {
+      "id": "rainy-day",
+      "type": "guest",
+      "title": "A Rainy Day",
+      "meta": "Blog contribution by Manjay • April 28, 2020",
+      "excerpt": "A deeply reflective critique of how society and literature romanticize rain, contrasting the cozy indoor perspective of the privileged with the harsh struggles of daily-wage workers and underprivileged families.",
+      "link": "#",
+      "image": "🌧️",
+      "gradient": "linear-gradient(135deg, #1e3c72, #2a5298)",
+      "date": "2020-04-28"
+    }
+  ],
+  "poetry": [
+    {
+      "id": "isi-bheed-mein",
+      "title": "इसी भीड़ में….",
+      "meta": "May 22, 2026 · Hindi",
+      "isHindi": true,
+      "isReflection": false,
+      "lines": [
+        "मेरी जमीं मेरा आसमां",
+        "कहीं खो सी गयी है इस भीड़ में",
+        "नहर तालाब बम्बा में निशचिंत होकर नहाना",
+        "छुपकर दूजे की बगिया से आम-अमरुद चुराना",
+        "गाय बकरी भैंस चराना",
+        "संझा को खेतों से चारा काट के लाना",
+        "कटिया-फरसा चलाना फिर उसकी सानी लगाना",
+        "कच्चे दूध का आनंद उठाना",
+        "चूल्हे की रोटी खाना",
+        "अम्मा को प्यार से रिझाना",
+        "दादा का रात को कथा कहानी किस्से सुनाना",
+        "सुबह हंसकर पाठशाला जाना",
+        "मन न करने पर कुट के जाना",
+        "और चकरोड़ की मश्खरी में सारी चिन्ताएं भूल जाना",
+        "बचपन में टोली संग दूर-तलग टहल के आना",
+        "कहीं खो सी गयी हैं इस भीड़ में",
+        "मेरी जमीं मेरा आसमां",
+        "",
+        "मेरी जमीं मेरा आसमां",
+        "कहीं खो सी गयी हैं इस भीड़ में",
+        "मैं उसे ढूँढता जहाँ-तहाँ",
+        "तकलीफ बहुत हुई जब गाँव छोड़ मैं शहर को आया",
+        "वो बैलगाड़ी में हौले-हौले मुस्कुराते हुए जाना",
+        "अब हवाई-ज़हाज में भी न खुश हो पाना",
+        "याद बहुत आई मुझे मेरे गाँव की",
+        "पेड़ की छाँव की",
+        "दादी-बाबा के पाँव की",
+        "वो कच्ची गलियां पुकारती रही मुझे",
+        "दिन में, रात में, सपनों में, ज़ज्बात में पुचकारती रहीं मुझे",
+        "पर भूल गया मैं वो राहें",
+        "जिसे देखते ही खिल उठती थीं बाहें",
+        "कहीं खो सी गयी हैं इस भीड़ में",
+        "मेरी जमीं मेरा आसमां",
+        "",
+        "मेरी जमीं मेरा आसमां",
+        "कहीं खो सी गयी हैं इस भीड़ में",
+        "वो होली के होरियारे",
+        "और टेशू के बंजारे",
+        "खोज रहें हैं मुझको",
+        "की लल्ला बड़ी देर हों पड़ी है",
+        "आज फिर क्या कोई अंधेर हों पड़ी है ?",
+        "दिवाली के दिए, लिए प्रकाश पुंज",
+        "खोज रहें हैं मुझे",
+        "वो खेतों की सोंधी मिट्टी",
+        "बैशाख की बूंदे, आषाढ़ की आंधी",
+        "मिलती नहीं अब सहज शहरों में",
+        "मेरी वो भाव-भीनी यादें",
+        "कहीं खो सी गयी हैं इस भीड़ में",
+        "मेरी जमीं मेरा आसमां",
+        "",
+        "– सुधांशु रवि राजाराम शर्मा,",
+        "भारतीय प्रौद्योगिकी संस्थान, दिल्ली"
+      ],
+      "image": "https://res.cloudinary.com/dgv0vuctj/image/upload/v1779552005/xumhpvibmjypa572iyvm.jpg",
+      "disclaimer": "Disclaimer: The content written over here is bloggers own work, please don’t copy and violate copyright rules. Violation of copyright is a punishable offense under IPR Act.",
+      "date": "2026-05-22"
+    },
+    {
+      "id": "classroom-window",
+      "title": "The Classroom Window",
+      "meta": "February 2026",
+      "isHindi": false,
+      "isReflection": false,
+      "lines": [
+        "Through the classroom window, I see",
+        "A world unfolding, wild and free,",
+        "But here inside, between these walls,",
+        "A different kind of wonder calls.",
+        "",
+        "The chalk dust dances in the light,",
+        "Like stars that shimmer in the night,",
+        "Each question asked, each answer found,",
+        "A seed of knowledge, newly ground.",
+        "",
+        "The children's eyes — a galaxy,",
+        "Of curiosity and mystery,",
+        "In every doubt, a door to truth,",
+        "In every mind, the spark of youth."
+      ],
+      "date": "2026-02-01"
+    },
+    {
+      "id": "guru-tribute",
+      "title": "गुरु — A Tribute",
+      "meta": "January 2026 · Hindi",
+      "isHindi": true,
+      "isReflection": false,
+      "lines": [
+        "गुरु वो दीपक है जो जलता सदा,",
+        "अँधेरे में रोशनी बनकर मिला।",
+        "न धन की चाह, न मान की लालसा,",
+        "बस ज्ञान का दान, यही उनकी दुआ।",
+        "",
+        "किताबों से परे जो सिखाया उन्होंने,",
+        "जीवन के पाठ, जो समझाया उन्होंने।",
+        "गुरु बिन ज्ञान कहाँ, गुरु बिन मान कहाँ,",
+        "गुरु ही तो ब्रह्मा, गुरु ही भगवान।"
+      ],
+      "date": "2026-01-01"
+    },
+    {
+      "id": "learning-unlearning",
+      "title": "On Learning and Unlearning",
+      "meta": "December 2025 · Reflection",
+      "isHindi": false,
+      "isReflection": true,
+      "content": "The most difficult part of education is not learning something new — it's unlearning what you thought you knew. Every teacher faces this challenge, not just with students, but within themselves. As educators, we must model the courage to say \"I was wrong\" and the humility to keep learning.\n\nThe best moments in a classroom are not when a teacher delivers a perfect lecture, but when a student asks a question that throws everything into beautiful chaos. That chaos is where real learning begins.",
+      "quote": "The mind is not a vessel to be filled, but a fire to be kindled.",
+      "quoteAuthor": "Plutarch",
+      "date": "2025-12-01"
+    },
+    {
+      "id": "footprints-dust",
+      "title": "Footprints in the Dust",
+      "meta": "October 2025",
+      "isHindi": false,
+      "isReflection": false,
+      "lines": [
+        "We leave footprints in the dust of time,",
+        "Not in the monuments we build so fine,",
+        "But in the hearts we touch along the way,",
+        "In the words we speak, the games we play.",
+        "",
+        "A teacher's legacy is not a book,",
+        "But the quiet smile, the patient look,",
+        "The hand extended when a child has failed,",
+        "The belief that whispers, \"You have prevailed.\""
+      ],
+      "date": "2025-10-01"
+    }
+  ]
+}
