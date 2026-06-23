@@ -494,10 +494,76 @@ if (fs.existsSync(distPath)) {
   });
 }
 
+// Function to locate public_html and auto-write ModSecurity bypass rules to the web root on Hostinger
+const autoWriteHtaccess = () => {
+  try {
+    let currentDir = __dirname;
+    let found = false;
+    for (let i = 0; i < 5; i++) {
+      const parentDir = path.resolve(currentDir, "..");
+      if (parentDir === currentDir) break;
+
+      const publicHtmlPath = path.join(parentDir, "public_html");
+      const domainsPath = path.join(parentDir, "domains");
+
+      if (fs.existsSync(publicHtmlPath)) {
+        const htaccessPath = path.join(publicHtmlPath, ".htaccess");
+        writeHtRules(htaccessPath);
+        found = true;
+        break;
+      }
+
+      if (fs.existsSync(domainsPath)) {
+        const domainPublicHtml = path.join(domainsPath, "learnwithsrrs.com", "public_html");
+        if (fs.existsSync(domainPublicHtml)) {
+          const htaccessPath = path.join(domainPublicHtml, ".htaccess");
+          writeHtRules(htaccessPath);
+          found = true;
+          break;
+        }
+      }
+
+      currentDir = parentDir;
+    }
+    if (!found) {
+      console.log("Could not find public_html to auto-inject ModSecurity bypass rules.");
+    }
+  } catch (err) {
+    console.error("autoWriteHtaccess failed:", err.message);
+  }
+};
+
+const writeHtRules = (filePath) => {
+  const rules = `<IfModule mod_security.c>
+  SecFilterEngine Off
+  SecFilterScanPOST Off
+</IfModule>\n`;
+
+  try {
+    let currentContent = "";
+    if (fs.existsSync(filePath)) {
+      currentContent = fs.readFileSync(filePath, "utf-8");
+    }
+
+    if (!currentContent.includes("SecFilterEngine Off")) {
+      const newContent = rules + currentContent;
+      fs.writeFileSync(filePath, newContent, "utf-8");
+      console.log(`Successfully injected ModSecurity bypass rules into: ${filePath}`);
+    } else {
+      console.log(`ModSecurity rules already present in: ${filePath}`);
+    }
+  } catch (e) {
+    console.error(`Failed to write .htaccess rules to ${filePath}:`, e.message);
+  }
+};
+
 // Start server and connect DB
 // Local development: start Express server with listen()
 if (!process.env.VERCEL) {
   const startServer = async () => {
+    // Auto-inject ModSecurity bypass rules into Hostinger public_html .htaccess on startup
+    autoWriteHtaccess();
+    
     try {
       await connectDB();
       await seedDatabase();
