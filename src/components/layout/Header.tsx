@@ -76,7 +76,7 @@ export default function Header() {
           <div className="header__brand">
             <div className="header__text">
               <h1 className="header__title">Sudhanshu Sharma</h1>
-              <span className="header__tagline">Lifelong Learner · Educator · Academecian · Researcher · Navigator | Exploring Design, Learning, and Meaningful Education</span>
+              <span className="header__tagline">Lifelong Learner · Educator · Academician · Researcher · Navigator | Exploring Design, Learning, and Meaningful Education</span>
             </div>
           </div>
           <div className="header__image-wrapper">
